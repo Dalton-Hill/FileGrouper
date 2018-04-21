@@ -16,28 +16,6 @@ class FileGroup:
         return size
 
     @property
-    def smallest_file(self):
-        smallest_file = None
-        for file_name in os.listdir(self.abs_path):
-            file_path = os.path.join(self.abs_path, file_name)
-            if not smallest_file:
-                smallest_file = file_path
-            elif os.path.getsize(smallest_file) > os.path.getsize(file_path):
-                smallest_file = file_path
-        return smallest_file
-
-    @property
-    def largest_file(self):
-        largest_file = None
-        for file_name in os.listdir(self.abs_path):
-            file_path = os.path.join(self.abs_path, file_name)
-            if not largest_file:
-                largest_file = file_path
-            elif os.path.getsize(largest_file) < os.path.getsize(file_path):
-                largest_file = file_path
-        return largest_file
-
-    @property
     def files(self):
         files = []
         for file_name in os.listdir(self.abs_path):
